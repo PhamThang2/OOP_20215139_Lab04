@@ -21,7 +21,7 @@ public class Aims {
 
 	public static String inputMediaTitle() {
 		System.out.print("Enter title: ");
-		sc.nextLine(); // Clear buffer
+		sc.nextLine();
 		return sc.nextLine();
 	}
 
@@ -315,5 +315,7 @@ public class Aims {
 		cart.removeMedia(m);
 	}
 }
+
+
 
 

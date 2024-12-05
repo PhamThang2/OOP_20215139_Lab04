@@ -1,0 +1,26 @@
+10. Unique item in a list:
+If the passing object is not an instance of Media, what happens?
+Nếu phương thức đi vào không phải đúng kiểu đang xét thì sẽ trả về false vì đã đặt điều kiện chặn những object khác kiểu dữ liệu khi nạp vào.
+
+12. Sort media in the cart:
+Question:
+Alternatively, to compare items in the cart, instead of using Comparator, we can use the Comparable interface and override the compareTo()method. You can refer to the Java docs to see the information of this interface. 
+Suppose we are taking this Comparable interface approach.
+
+-What class should implement the Comparable interface?
+
+Các lớp đối tượng mà chương trình dùng để so sánh và sắp xếp trong giỏ hàng nên implement Comparable interface. 
+Ví dụ, các lớp như Item, DVD, Book, thì có thể implement Comparable trong các lớp này.
+
+-In those classes, how should you implement the compareTo()method be to reflect the ordering that we want?
+
+Phương thức compareTo() cần được override để trả về một số nguyên dựa trên thứ tự mà bạn muốn thiết lập.
+Ví dụ, nếu muốn sắp xếp các mặt hàng theo tiêu đề và sau đó theo giá, phương thức compareTo() sẽ so sánh tiêu đề trước và nếu tiêu đề bằng nhau, so sánh theo giá.
+
+-Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+
+Chỉ có thể sắp xếp theo một tiêu chí duy nhất mỗi lần, không thể sử dụng cùng một compareTo() để thiết lập nhiều quy tắc sắp xếp khác nhau.
+
+-Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+
+Bởi vì chỉ có thể implements một phương thức comparable nên để thay đổi quy tắc so sánh, ta cần tự tạo phương thức mới để so sánh với các kiểu dữ liệu khác nhau.
